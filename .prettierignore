@@ -1,0 +1,9 @@
+
+.expo
+.idea
+assets
+ios
+android
+package.json
+package-lock.json
+tsconfig.json
