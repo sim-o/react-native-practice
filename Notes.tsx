@@ -8,8 +8,8 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { slice as notesSlice } from "./store/notes";
-import { useDispatch, useSelector } from "react-redux";
+import { notes as notesSlice } from "./store/notes";
+import { useAppDispatch, useAppSelector } from "./hooks";
 
 const styles = StyleSheet.create({
   title: { fontWeight: "bold", fontSize: 24, textDecorationLine: "underline" },
@@ -40,9 +40,9 @@ function Note({
 }
 
 export function Notes() {
-  const dispatch = useDispatch();
-  const notes = useSelector(notesSlice.selectors.selectNotes);
-  const [editing, setEditing] = useState(-1);
+  const dispatch = useAppDispatch();
+  const notes = useAppSelector(notesSlice.selectors.selectNotes);
+  const [editing, setEditing] = useState(null as number | null);
 
   return (
     <View>
@@ -58,12 +58,17 @@ export function Notes() {
                 setEditing(note.item.id);
               }}
               onChange={(value) => {
-                dispatch(notesSlice.actions.updateNote({ id: note.item.id, value }))
+                dispatch(
+                  notesSlice.actions.updateNote({ id: note.item.id, value }),
+                );
               }}
             />
           )}
         />
-        <Button title="Add Note" onPress={() => dispatch(notesSlice.actions.newNote('enter note...'))}/>
+        <Button
+          title="Add Note"
+          onPress={() => dispatch(notesSlice.actions.newNote("enter note..."))}
+        />
       </SafeAreaView>
     </View>
   );

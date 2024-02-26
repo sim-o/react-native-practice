@@ -3,7 +3,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 export type Note = { id: number; value: string };
 export type State = { nextId: number; notes: Note[] };
 
-const initialState: State = {
+export const initialNotesState: State = {
   nextId: 3,
   notes: [
     { id: 1, value: "first note" },
@@ -11,9 +11,9 @@ const initialState: State = {
   ],
 };
 
-export const slice = createSlice({
+export const notes = createSlice({
   name: "notes",
-  initialState,
+  initialState: initialNotesState,
   selectors: {
     selectNotes: (state): Note[] => state.notes,
   },

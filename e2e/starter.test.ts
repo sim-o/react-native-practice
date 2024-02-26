@@ -22,7 +22,5 @@ describe('Notes', () => {
 });
 
 function button(label: string): string {
-  const recased = device.getPlatform() === 'android' ? label.toLocaleUpperCase() : label;
-  console.log('label', recased)
-  return recased;
+  return device.getPlatform() === 'android' ? label.toLocaleUpperCase() : label;
 }
