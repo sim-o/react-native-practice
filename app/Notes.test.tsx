@@ -1,6 +1,6 @@
 import { Notes } from "./Notes";
 import { renderWithProviders } from "./test-utils";
-import { initialNotesState } from "./store/notes";
+import { initialNotesState } from "../store/notes";
 import { screen } from "@testing-library/react-native";
 import { fireEvent } from "react-native-testing-library";
 

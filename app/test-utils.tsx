@@ -4,7 +4,7 @@ import { render } from "@testing-library/react-native";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 
-import { AppStore, rootReducer, RootState } from "./store";
+import { AppStore, rootReducer, RootState } from "../store";
 // As a basic setup, import your same slice reducers
 
 // This type interface extends the default options for render from RTL, as well

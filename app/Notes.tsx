@@ -3,19 +3,13 @@ import {
   Button,
   FlatList,
   SafeAreaView,
-  StyleSheet,
-  Text,
   TextInput,
   View,
+  Text,
 } from "react-native";
-import { notes as notesSlice } from "./store/notes";
+import { notes as notesSlice } from "../store/notes";
 import { useAppDispatch, useAppSelector } from "./hooks";
-
-const styles = StyleSheet.create({
-  title: { fontWeight: "bold", fontSize: 24, textDecorationLine: "underline" },
-  note: { minHeight: 24, verticalAlign: "middle" },
-  noteText: { fontSize: 18 },
-});
+import { styled } from "nativewind";
 
 function Note({
   note,
@@ -29,11 +23,18 @@ function Note({
   onChange: (value: string) => void;
 }) {
   return (
-    <View style={styles.note} onTouchEnd={onTap}>
+    <View
+      className="flex-1 min-h-8 justify-center items-start"
+      onTouchEnd={onTap}
+    >
       {!edit ? (
-        <Text style={styles.noteText}>{note}</Text>
+        <Text className="text-biggish">{note}</Text>
       ) : (
-        <TextInput value={note} onChangeText={(v) => onChange(v)} />
+        <TextInput
+          className="text-biggish"
+          value={note}
+          onChangeText={(v) => onChange(v)}
+        />
       )}
     </View>
   );
@@ -47,16 +48,16 @@ export function Notes() {
   return (
     <View>
       <SafeAreaView>
-        <Text style={styles.title}>This is the top</Text>
+        <Text className="text-underline text-xl font-bold">
+          This is the top
+        </Text>
         <FlatList
           data={notes}
           renderItem={(note) => (
             <Note
               note={note.item.value}
               edit={note.item.id === editing}
-              onTap={() => {
-                setEditing(note.item.id);
-              }}
+              onTap={() => setEditing(note.item.id)}
               onChange={(value) => {
                 dispatch(
                   notesSlice.actions.updateNote({ id: note.item.id, value }),

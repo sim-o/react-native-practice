@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import { Notes } from "./Notes";
+import { Notes } from "./app/Notes";
 
 export default function App() {
   return (
