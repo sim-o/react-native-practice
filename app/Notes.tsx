@@ -10,6 +10,7 @@ import {
 import { notes as notesSlice } from "../store/notes";
 import { useAppDispatch, useAppSelector } from "./hooks";
 import { styled } from "nativewind";
+import { FlashList } from "@shopify/flash-list";
 
 function Note({
   note,
@@ -31,8 +32,9 @@ function Note({
         <Text className="text-biggish">{note}</Text>
       ) : (
         <TextInput
-          className="text-biggish"
+          className="text-biggish text-blue-800"
           value={note}
+          autoFocus
           onChangeText={(v) => onChange(v)}
         />
       )}
@@ -43,7 +45,7 @@ function Note({
 export function Notes() {
   const dispatch = useAppDispatch();
   const notes = useAppSelector(notesSlice.selectors.selectNotes);
-  const [editing, setEditing] = useState(null as number | null);
+  const editing = useAppSelector(notesSlice.selectors.editing);
 
   return (
     <View>
@@ -51,17 +53,17 @@ export function Notes() {
         <Text className="text-underline text-xl font-bold">
           This is the top
         </Text>
-        <FlatList
+        <FlashList
           data={notes}
-          renderItem={(note) => (
+          estimatedItemSize={41}
+          extraData={{ editing }}
+          renderItem={({ item, extraData: { editing } }) => (
             <Note
-              note={note.item.value}
-              edit={note.item.id === editing}
-              onTap={() => setEditing(note.item.id)}
+              note={item.value}
+              edit={item.id === editing}
+              onTap={() => dispatch(notesSlice.actions.edit(item.id))}
               onChange={(value) => {
-                dispatch(
-                  notesSlice.actions.updateNote({ id: note.item.id, value }),
-                );
+                dispatch(notesSlice.actions.updateNote({ id: item.id, value }));
               }}
             />
           )}
