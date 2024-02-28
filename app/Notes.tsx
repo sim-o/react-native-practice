@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React  from "react";
 import {
   Button,
-  FlatList,
   SafeAreaView,
   TextInput,
   View,
@@ -9,7 +8,6 @@ import {
 } from "react-native";
 import { notes as notesSlice } from "../store/notes";
 import { useAppDispatch, useAppSelector } from "./hooks";
-import { styled } from "nativewind";
 import { FlashList } from "@shopify/flash-list";
 
 function Note({
