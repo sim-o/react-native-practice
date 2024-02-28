@@ -1,7 +1,7 @@
-import React, { JSX, PropsWithChildren } from "react";
+import { configureStore } from "@reduxjs/toolkit";
 import type { RenderOptions } from "@testing-library/react-native";
 import { render } from "@testing-library/react-native";
-import { configureStore } from "@reduxjs/toolkit";
+import React, { JSX, PropsWithChildren } from "react";
 import { Provider } from "react-redux";
 
 import { AppStore, rootReducer, RootState } from "../store";

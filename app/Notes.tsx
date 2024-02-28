@@ -1,8 +1,9 @@
+import { FlashList } from "@shopify/flash-list";
 import React from "react";
 import { Button, SafeAreaView, TextInput, View, Text } from "react-native";
-import { notes as notesSlice } from "../store/notes";
+
 import { useAppDispatch, useAppSelector } from "./hooks";
-import { FlashList } from "@shopify/flash-list";
+import { notes as notesSlice } from "../store/notes";
 
 function Note({
   note,

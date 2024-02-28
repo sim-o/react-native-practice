@@ -8,6 +8,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
+    "universe/native",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
