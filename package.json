@@ -71,7 +71,7 @@
       "<rootDir>/jest-setup.ts"
     ]
   },
-    "lint-staged": {
+  "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   }
 }

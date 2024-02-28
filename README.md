@@ -1,3 +1,7 @@
 # install detox with
 
-`npm install detox-cli --global`
+```bash
+npm install detox-cli --global
+brew tap wix/brew
+brew install applesimutils
+```
