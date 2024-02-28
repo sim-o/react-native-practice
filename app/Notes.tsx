@@ -40,7 +40,7 @@ export function Notes() {
   const editing = useAppSelector(notesSlice.selectors.editing);
 
   return (
-    <View>
+    <View className="flex-1">
       <SafeAreaView>
         <Text className="text-underline text-xl font-bold">
           This is the top

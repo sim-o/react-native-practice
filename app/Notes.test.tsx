@@ -11,5 +11,5 @@ test("Notes", () => {
 
   expect(screen.getByText("Add Note")).toBeVisible();
   fireEvent.press(screen.getByText("Add Note"));
-  expect(screen.getByText("enter note...")).toBeVisible();
+  expect(screen.getByDisplayValue("enter note...")).toBeVisible();
 });
