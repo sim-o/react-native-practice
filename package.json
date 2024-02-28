@@ -18,6 +18,7 @@
     "prettier:check": "npx prettier . --check",
     "lint": "eslint App.tsx src/",
     "lint:fix": "eslint --fix App.tsx src/",
+    "lint-staged": "lint-staged -p false",
     "prepare": "husky"
   },
   "dependencies": {
