@@ -14,6 +14,8 @@
     "e2e:ios": "detox test --configuration ios.sim.debug",
     "e2e:ios:release:build": "detox build --configuration ios.sim.release",
     "e2e:ios:release": "detox test --configuration ios.sim.release",
+    "prettier": "npx prettier . --write",
+    "prettier:check": "npx prettier . --check",
     "lint": "eslint App.tsx src/",
     "lint:fix": "eslint --fix App.tsx src/"
   },

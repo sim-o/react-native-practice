@@ -1,11 +1,5 @@
-import React  from "react";
-import {
-  Button,
-  SafeAreaView,
-  TextInput,
-  View,
-  Text,
-} from "react-native";
+import React from "react";
+import { Button, SafeAreaView, TextInput, View, Text } from "react-native";
 import { notes as notesSlice } from "../store/notes";
 import { useAppDispatch, useAppSelector } from "./hooks";
 import { FlashList } from "@shopify/flash-list";
