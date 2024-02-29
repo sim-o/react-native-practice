@@ -1,5 +1,8 @@
 import { expect } from "detox";
 
+const DEVELOPER_MENU_TEXT =
+  "This is the developer menu. It gives you access to useful tools in your development builds.";
+
 describe("Notes", () => {
   beforeAll(async () => {
     await device.launchApp({ newInstance: false });
@@ -15,7 +18,7 @@ describe("Notes", () => {
     await device.reloadReactNative();
 
     // workaround to dismiss dev menu -- can alternatively uninstall expo-dev-client
-    const devmenu = await expect(element(by.label("Continue")))
+    const devmenu = await expect(element(by.text(DEVELOPER_MENU_TEXT)))
       .toExist()
       .then(() => true)
       .catch(() => false);
