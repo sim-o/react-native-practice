@@ -1,2 +1,2 @@
 npm run lint-staged
-npm t
+npm run test:changed
