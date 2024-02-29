@@ -2,15 +2,15 @@
 
 ## setup ios build and simulator
 
-install xcode
-install simulator
-xcode-select --install
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+- install xcode
+- install simulator
+- xcode-select --install
+- sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
 ## setup android
 
-install android studio
-within android studio, install android sdk
+- install android studio
+- within android studio, install android sdk
 
 ## install detox with
 
@@ -85,19 +85,19 @@ configure the .detoxrc.js
 
 ## install husky and lint-staged
 
-npm install --save-dev husky lint-staged
-add the lint-staged section to package.json - I've set lint staged to disable parallel as eslint --fix and prettier would clash  
-run `npx husky init`
-add scripts to .husky/pre-commit
+- npm install --save-dev husky lint-staged
+- add the lint-staged section to package.json - I've set lint staged to disable parallel as eslint --fix and prettier would clash
+- run `npx husky init`
+- add scripts to .husky/pre-commit
 
 ## install nativewind
 
 https://www.nativewind.dev/quick-starts/expo
 
-## install flashlist
+## install flash-list
 
-npm i @shopify/flash-list
-remember to add the setup script to jest-setup.ts
+- npm i @shopify/flash-list
+- remember to add the setup script to jest-setup.ts
 
 ## expo-dev-client
 
