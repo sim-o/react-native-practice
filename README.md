@@ -34,11 +34,30 @@ npm run detox:[ios/android]:build
 npm run detox:[ios/android]
 ```
 
+## debugging
+
+see https://reactnative.dev/docs/debugging
+
+requires expo-dev-client
+
+to examine the component tree:
+
+```bash
+npx react-devtools
+```
+
+to access the javascript console, press `j` in the expo terminal app
+
+---
+
 # to reproduce project
 
 see https://docs.expo.dev/guides/typescript/
+
+```bash
 npx create-expo-app -t expo-template-blank-typescript
 npx expo install detox @config-plugins/detox
+```
 
 ## install prettier and eslint
 
