@@ -1,18 +1,18 @@
-# this repository
+# This Repository
 
-## setup ios build and simulator
+## Setup Ios Build And Simulator
 
 - install xcode
 - install simulator
-- xcode-select --install
-- sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+- `xcode-select --install`
+- `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer`
 
-## setup android
+## Setup Android
 
 - install android studio
 - within android studio, install android sdk
 
-## install detox with
+## Install Detox
 
 ```bash
 npm install detox-cli --global
@@ -22,11 +22,7 @@ brew install applesimutils
 
 see @config-plugins/detox docs https://github.com/expo/config-plugins/tree/main/packages/detox
 
-## checkout this repository
-
-then run `npm install`
-
-## run detox
+## Run Detox
 
 ```bash
 npx expo prebuild [--clean]
@@ -34,23 +30,15 @@ npm run detox:[ios/android]:build
 npm run detox:[ios/android]
 ```
 
-## debugging
+## Debugging
 
-see https://reactnative.dev/docs/debugging
-
-requires expo-dev-client
-
-to examine the component tree:
-
-```bash
-npx react-devtools
-```
+- see https://reactnative.dev/docs/debugging
+- requires expo-dev-client
+- to examine the component tree: `npx react-devtools`
 
 to access the javascript console, press `j` in the expo terminal app
 
----
-
-# to reproduce project
+# Reproducing This Project
 
 see https://docs.expo.dev/guides/typescript/
 
@@ -59,19 +47,19 @@ npx create-expo-app -t expo-template-blank-typescript
 npx expo install detox @config-plugins/detox
 ```
 
-## install prettier and eslint
+## Install Prettier and Eslint
 
 see https://docs.expo.dev/guides/using-eslint/
 
-## install jest
+## Install Jest
 
 npm i -D jest jest-expo @types/jest
 
-## add helper functions for testing redux components
+## Testing Redux Components
 
-see app/test-utils.tsx
+see app/test-utils.tsx for a helper that will render redux components with prepared state.
 
-## install detox
+## Install Detox
 
 https://wix.github.io/Detox/docs/19.x/introduction/getting-started/
 
@@ -83,23 +71,27 @@ detox init
 configure the .detoxrc.js
 ```
 
-## install husky and lint-staged
+## Install Husky and Lint-Staged
 
 - npm install --save-dev husky lint-staged
-- add the lint-staged section to package.json - I've set lint staged to disable parallel as eslint --fix and prettier would clash
+- add the lint-staged section to package.json - I've set lint staged to disable parallel with `-p false`
+  as `eslint --fix` and `prettier` would clash
 - run `npx husky init`
 - add scripts to .husky/pre-commit
 
-## install nativewind
+## Install Nativewind
 
 https://www.nativewind.dev/quick-starts/expo
 
-## install flash-list
+## Install Flash-List
 
 - npm i @shopify/flash-list
-- remember to add the setup script to jest-setup.ts
+- add the setup script to jest-setup.ts
 
-## expo-dev-client
+flash-list requires all external state to be passed to components via the `extraData` parameter, and will not re-render
+on changes to state that is not passed through this.
+
+## Expo-Dev-Client
 
 if at some point you install this dependency (it does helpful things), the detox tests may stop working. There is a workaround
 in starter.test.ts that opens the app within the dev app within the simulator and dismisses the developer menu.
