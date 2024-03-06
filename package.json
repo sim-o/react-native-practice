@@ -15,9 +15,10 @@
     "lint:fix": "eslint --fix App.tsx app/",
     "lint-staged": "lint-staged -p false",
     "prepare": "husky",
-
     "e2e:android:build": "detox build --configuration android.emu.debug",
+    "e2e:android:build:release": "detox build --configuration android.att.release",
     "e2e:android": "detox test --configuration android.emu.debug",
+    "e2e:android:attached": "detox test --configuration android.att.release",
     "e2e:ios:build": "detox build --configuration ios.sim.debug",
     "e2e:ios": "detox test --configuration ios.sim.debug",
     "e2e:ios:release:build": "detox build --configuration ios.sim.release",
@@ -27,14 +28,17 @@
     "@config-plugins/detox": "^7.0.0",
     "@reduxjs/toolkit": "^2.2.1",
     "@shopify/flash-list": "1.6.3",
-    "expo": "~50.0.7",
+    "expo": "^50.0.8",
     "expo-detox-hook": "^1.0.10",
     "expo-dev-client": "~3.3.9",
     "expo-status-bar": "~1.11.1",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-native": "0.73.4",
-    "react-redux": "^9.1.0"
+    "react-redux": "^9.1.0",
+    "expo-notifications": "~0.27.6",
+    "expo-device": "~5.9.3",
+    "expo-constants": "~15.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

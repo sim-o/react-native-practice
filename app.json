@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "AwesomeProject",
-    "slug": "AwesomeProject",
+    "slug": "awesomeapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -26,6 +26,15 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["@config-plugins/detox"]
+    "plugins": ["@config-plugins/detox"],
+    "extra": {
+      "eas": {
+        "projectId": "1dfbde46-5fa4-4ee6-bd6a-bb9d25104320"
+      }
+    },
+    "owner": "simonkerle"
+  },
+  "android": {
+    "googleServicesFile": "./google-services.json"
   }
 }
