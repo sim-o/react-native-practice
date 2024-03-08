@@ -95,3 +95,12 @@ on changes to state that is not passed through this.
 
 if at some point you install this dependency (it does helpful things), the detox tests may stop working. There is a workaround
 in starter.test.ts that opens the app within the dev app within the simulator and dismisses the developer menu.
+
+## Notifications
+
+Follow the instructions at https://docs.expo.dev/push-notifications/push-notifications-setup/
+
+Note: at time of writing this readme, the instructions above are incorrect when referring to the `googleServicesFile` property
+in `app.json`. This property should be added at `expo.android.googleServicesFile` rather than `android.googleServicesFile`. If
+you follow the documentation exactly, you will receive no warnings, the notifications will just fail when building your own
+app.
