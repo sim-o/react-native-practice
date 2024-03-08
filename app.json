@@ -21,20 +21,26 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.AwesomeProject"
+      "package": "com.anonymous.AwesomeProject",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["@config-plugins/detox"],
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": { "usesCleartextTraffic": true }
+        }
+      ]
+    ],
     "extra": {
       "eas": {
         "projectId": "1dfbde46-5fa4-4ee6-bd6a-bb9d25104320"
       }
     },
     "owner": "simonkerle"
-  },
-  "android": {
-    "googleServicesFile": "./google-services.json"
   }
 }
