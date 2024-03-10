@@ -1,4 +1,4 @@
-package com.anonymous.AwesomeProject
+package au.com.simonkerle.AwesomeProject
 
 import android.os.Build
 import android.os.Bundle

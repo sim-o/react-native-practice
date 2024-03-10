@@ -14,14 +14,14 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.AwesomeProject"
+      "bundleIdentifier": "au.com.simonkerle.AwesomeProject"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.AwesomeProject",
+      "package": "au.com.simonkerle.AwesomeProject",
       "googleServicesFile": "./google-services.json",
       "versionCode": 1
     },
