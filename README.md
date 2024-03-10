@@ -81,7 +81,8 @@ configure the .detoxrc.js
 
 ## Install Nativewind
 
-https://www.nativewind.dev/quick-starts/expo
+- https://www.nativewind.dev/quick-starts/expo
+- https://www.nativewind.dev/getting-started/typescript
 
 ## Install Flash-List
 
