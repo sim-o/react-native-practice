@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "AwesomeProject",
+    "name": "Kerley's Special Project",
     "slug": "awesomeapp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -14,7 +14,10 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "au.com.simonkerle.AwesomeProject"
+      "bundleIdentifier": "au.com.simonkerle.AwesomeProject",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
