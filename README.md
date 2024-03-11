@@ -99,7 +99,9 @@ in starter.test.ts that opens the app within the dev app within the simulator an
 
 ## Notifications
 
-Follow the instructions at https://docs.expo.dev/push-notifications/push-notifications-setup/
+Follow the instructions at:
+- https://docs.expo.dev/push-notifications/push-notifications-setup/
+- https://docs.expo.dev/push-notifications/fcm-credentials/
 
 Note: at time of writing this readme, the instructions above are incorrect when referring to the `googleServicesFile` property
 in `app.json`. This property should be added at `expo.android.googleServicesFile` rather than `android.googleServicesFile`. If
