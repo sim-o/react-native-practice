@@ -28,6 +28,9 @@ describe("Notes", () => {
   });
 
   it("can add a note", async () => {
+    await expect(element(by.text(button("Notes")))).toBeVisible();
+    await element(by.text(button("Notes"))).tap();
+
     await expect(element(by.text(button("Add Note")))).toBeVisible();
     await element(by.text(button("Add Note"))).tap();
     await element(by.text("enter note...")).tap();

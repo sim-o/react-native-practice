@@ -13,16 +13,16 @@ module.exports = {
     "ios.debug": {
       type: "ios.app",
       binaryPath:
-        "ios/build/Build/Products/Debug-iphonesimulator/AwesomeProject.app",
+        "ios/build/Build/Products/Debug-iphonesimulator/KerleysSpecialProject.app",
       build:
-        "xcodebuild -workspace ios/AwesomeProject.xcworkspace -scheme AwesomeProject -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "xcodebuild -workspace ios/SimonsSpecialAwesomeProject.xcworkspace -scheme SimonsSpecialAwesomeProject -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
     },
     "ios.release": {
       type: "ios.app",
       binaryPath:
-        "ios/build/Build/Products/Release-iphonesimulator/AwesomeProject.app",
+        "ios/build/Build/Products/Release-iphonesimulator/SimonsSpecialAwesomeProject.app",
       build:
-        "xcodebuild -workspace ios/AwesomeProject.xcworkspace -scheme AwesomeProject -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
+        "xcodebuild -workspace ios/SimonsSpecialAwesomeProject.xcworkspace -scheme SimonsSpecialAwesomeProject -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
     },
     "android.debug": {
       type: "android.apk",

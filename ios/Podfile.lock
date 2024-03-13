@@ -12,7 +12,7 @@ PODS:
     - ExpoModulesCore
   - EXNotifications (0.27.6):
     - ExpoModulesCore
-  - Expo (50.0.8):
+  - Expo (50.0.11):
     - ExpoModulesCore
   - expo-dev-client (3.3.9):
     - EXManifests
@@ -83,17 +83,24 @@ PODS:
     - React-Core
   - ExpoDevice (5.9.3):
     - ExpoModulesCore
-  - ExpoFileSystem (16.0.7):
+  - ExpoFileSystem (16.0.8):
+    - ExpoModulesCore
+  - ExpoHead (3.4.8):
     - ExpoModulesCore
   - ExpoKeepAwake (12.8.2):
     - ExpoModulesCore
-  - ExpoModulesCore (1.11.9):
+  - ExpoModulesCore (1.11.10):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
     - React-NativeModulesApple
     - React-RCTAppDelegate
     - ReactCommon/turbomodule/core
+  - EXSplashScreen (0.26.4):
+    - ExpoModulesCore
+    - glog
+    - RCT-Folly (= 2022.05.16.00)
+    - React-Core
   - EXUpdatesInterface (0.15.3)
   - FBLazyVector (0.73.4)
   - FBReactNativeSpec (0.73.4):
@@ -980,6 +987,8 @@ PODS:
   - React-Mapbuffer (0.73.4):
     - glog
     - React-debug
+  - react-native-safe-area-context (4.8.2):
+    - React-Core
   - React-nativeconfig (0.73.4)
   - React-NativeModulesApple (0.73.4):
     - glog
@@ -1149,6 +1158,10 @@ PODS:
     - React-perflogger (= 0.73.4)
   - RNFlashList (1.6.3):
     - React-Core
+  - RNScreens (3.29.0):
+    - glog
+    - RCT-Folly (= 2022.05.16.00)
+    - React-Core
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
 
@@ -1168,8 +1181,10 @@ DEPENDENCIES:
   - expo-dev-menu-interface (from `../node_modules/expo-dev-menu-interface/ios`)
   - ExpoDevice (from `../node_modules/expo-device/ios`)
   - ExpoFileSystem (from `../node_modules/expo-file-system/ios`)
+  - ExpoHead (from `../node_modules/expo-router/ios`)
   - ExpoKeepAwake (from `../node_modules/expo-keep-awake/ios`)
   - ExpoModulesCore (from `../node_modules/expo-modules-core`)
+  - EXSplashScreen (from `../node_modules/expo-splash-screen/ios`)
   - EXUpdatesInterface (from `../node_modules/expo-updates-interface/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
@@ -1199,6 +1214,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector-modern`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
+  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -1220,6 +1236,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNFlashList (from `../node_modules/@shopify/flash-list`)"
+  - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1259,10 +1276,14 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-device/ios"
   ExpoFileSystem:
     :path: "../node_modules/expo-file-system/ios"
+  ExpoHead:
+    :path: "../node_modules/expo-router/ios"
   ExpoKeepAwake:
     :path: "../node_modules/expo-keep-awake/ios"
   ExpoModulesCore:
     :path: "../node_modules/expo-modules-core"
+  EXSplashScreen:
+    :path: "../node_modules/expo-splash-screen/ios"
   EXUpdatesInterface:
     :path: "../node_modules/expo-updates-interface/ios"
   FBLazyVector:
@@ -1316,6 +1337,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   React-Mapbuffer:
     :path: "../node_modules/react-native/ReactCommon"
+  react-native-safe-area-context:
+    :path: "../node_modules/react-native-safe-area-context"
   React-nativeconfig:
     :path: "../node_modules/react-native/ReactCommon"
   React-NativeModulesApple:
@@ -1358,6 +1381,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNFlashList:
     :path: "../node_modules/@shopify/flash-list"
+  RNScreens:
+    :path: "../node_modules/react-native-screens"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -1370,15 +1395,17 @@ SPEC CHECKSUMS:
   EXJSONUtils: 5c42959e87be238b045ef37cc5268b16a6c0ad4a
   EXManifests: 5e8c29f36c716af768a4ea47ec05e1b89ab93091
   EXNotifications: e11f0e9a5b657c064a481a5d522f3bc5a07bf7cd
-  Expo: c2d3edc1b1e833e26d837b03aa46d9137ca63302
+  Expo: bbffa600c41f904151a925e5a214d1f4c5a79794
   expo-dev-client: dbc8e8a81d17a9d92e083a2856d056ba9a58984d
   expo-dev-launcher: 3f2a78d97842a3fdc2f0116f775d8dbc32396cbd
   expo-dev-menu: b964921baa1bda2a7ff42a407d1d7698ce215faf
   expo-dev-menu-interface: 7ba029c9d1a82ac22b9b584c00514860b060553e
   ExpoDevice: d204395e17fffdcefa7470bdef33b07719ac41b1
-  ExpoFileSystem: c7488590959bf85ebc114909eb8186cbd62e3a25
+  ExpoFileSystem: eecaf6796aed0f4dd20042dc2ca2cac6c4bc1185
+  ExpoHead: 8224345e80abcf4c97b31c99805dd5a3c8d3404d
   ExpoKeepAwake: 0f5cad99603a3268e50af9a6eb8b76d0d9ac956c
-  ExpoModulesCore: 1391529545de72f7f64ecabc7adb912306ab4d34
+  ExpoModulesCore: b2ae7a3fc6193556273c5db90065fbe7e11c7a60
+  EXSplashScreen: 39244885abfb1b12765aae89edb90f8c88db6bbd
   EXUpdatesInterface: 3e444e2093e25b7ca0999a7d8c16e8392dee70c3
   FBLazyVector: 84f6edbe225f38aebd9deaf1540a4160b1f087d7
   FBReactNativeSpec: d0086a479be91c44ce4687a962956a352d2dc697
@@ -1407,6 +1434,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 9ac353eccf6ab54d1e0a33862ba91221d1e88460
   React-logger: 0a57b68dd2aec7ff738195f081f0520724b35dab
   React-Mapbuffer: 63913773ed7f96b814a2521e13e6d010282096ad
+  react-native-safe-area-context: 0ee144a6170530ccc37a0fd9388e28d06f516a89
   React-nativeconfig: d7af5bae6da70fa15ce44f045621cf99ed24087c
   React-NativeModulesApple: 0123905d5699853ac68519607555a9a4f5c7b3ac
   React-perflogger: 8a1e1af5733004bdd91258dcefbde21e0d1faccd
@@ -1428,6 +1456,7 @@ SPEC CHECKSUMS:
   React-utils: 6e5ad394416482ae21831050928ae27348f83487
   ReactCommon: 840a955d37b7f3358554d819446bffcf624b2522
   RNFlashList: 4b4b6b093afc0df60ae08f9cbf6ccd4c836c667a
+  RNScreens: b582cb834dc4133307562e930e8fa914b8c04ef2
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 1b901a6d6eeba4e8a2e8f308f708691cdb5db312
 

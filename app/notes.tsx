@@ -35,13 +35,13 @@ function Note({
   );
 }
 
-export function Notes() {
+export default function Notes() {
   const dispatch = useAppDispatch();
   const notes = useAppSelector(notesSlice.selectors.selectNotes);
   const editing = useAppSelector(notesSlice.selectors.editing);
 
   return (
-    <View className="flex-1">
+    <View className="flex-1 justify-center items-center h-full">
       <SafeAreaView>
         <Text className="text-underline text-xl font-bold">
           This is the top

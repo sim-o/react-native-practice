@@ -1,24 +1,32 @@
 import Constants from "expo-constants";
 import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
+import { Link } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { useState, useEffect, useRef } from "react";
-import { Text, Button, Platform, StyleSheet, View } from "react-native";
-import { Provider } from "react-redux";
+import { useEffect, useRef, useState } from "react";
+import {
+  Button,
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
-import { Notes } from "./app/Notes";
-import { store } from "./store";
-
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldPlaySound: false,
-    shouldSetBadge: false,
-  }),
-});
+if (Device.isDevice) {
+  Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+      shouldShowAlert: true,
+      shouldPlaySound: false,
+      shouldSetBadge: false,
+    }),
+  });
+}
 
 // Can use this function below or use Expo's Push Notification Tool from: https://expo.dev/notifications
 async function sendPushNotification(expoPushToken: string) {
+  if (!Device.isDevice) return;
+
   const message = {
     to: expoPushToken,
     sound: "default",
@@ -82,6 +90,8 @@ export default function App() {
   const responseListener = useRef<Notifications.Subscription | undefined>();
 
   useEffect(() => {
+    if (!Device.isDevice) return;
+
     registerForPushNotificationsAsync().then((token) =>
       setExpoPushToken(token),
     );
@@ -107,8 +117,8 @@ export default function App() {
   }, []);
 
   return (
-    <Provider store={store}>
-      <View style={styles.container}>
+    <View style={styles.container}>
+      <SafeAreaView>
         <View
           style={{
             flex: 1,
@@ -137,10 +147,12 @@ export default function App() {
             }}
           />
         </View>
-        <Notes />
+        <Link href="/notes" asChild>
+          <Button title="Notes" />
+        </Link>
         <StatusBar style="auto" />
-      </View>
-    </Provider>
+      </SafeAreaView>
+    </View>
   );
 }
 
