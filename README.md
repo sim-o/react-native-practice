@@ -44,7 +44,6 @@ see https://docs.expo.dev/guides/typescript/
 
 ```bash
 npx create-expo-app -t expo-template-blank-typescript
-npx expo install detox @config-plugins/detox
 ```
 
 ## Install Prettier and Eslint
@@ -66,6 +65,8 @@ https://wix.github.io/Detox/docs/19.x/introduction/getting-started/
 ```bash
 npm install detox-cli --global
 npm install detox --save-dev
+npx expo install detox @config-plugins/detox
+npm install expo-detox-hook
 # follow the platform guides from the link above
 detox init
 configure the .detoxrc.js
