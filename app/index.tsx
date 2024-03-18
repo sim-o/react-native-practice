@@ -12,6 +12,7 @@ import {
   Text,
   View,
 } from "react-native";
+import Toast from "react-native-root-toast";
 
 if (Device.isDevice) {
   Notifications.setNotificationHandler({
@@ -144,6 +145,9 @@ export default function App() {
             title="Press to Send Notification"
             onPress={async () => {
               if (expoPushToken) await sendPushNotification(expoPushToken);
+              Toast.show("Blahg blahg blahg.", {
+                duration: Toast.durations.LONG,
+              });
             }}
           />
         </View>
